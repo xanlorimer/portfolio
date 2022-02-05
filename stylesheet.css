@@ -1,0 +1,204 @@
+:root{
+    font-family: Arial, Helvetica, sans-serif;
+    --bg-color-l:white;
+    --text-color-l:black;
+    --border-color-l:black;
+    --bg-color-d:black;
+    --text-color-d:white;
+    --border-color-d:white;
+    /* font-size:100%; */
+
+    /* Define variables */
+    /* --cmargin-l-r: 10%;
+    --bordercolor: rgb(12, 12, 12);
+    --nav-padding: 1%;
+    --header-size: 40%;
+    --nav-radius: 20px;
+    --primary-width: 80%;
+    --navtype:inline-block;
+    --image-width:100%;
+    --interface-img-width:50%;
+    --selected-item-color:rgba(75, 115, 155, 0.9);
+    --invalid-selection-color:rgba(215, 35, 35, 0.6);
+    --nav-width:15%; */
+}
+
+/* Light theme */
+.light{
+    background-color:var(--bg-color-l);
+    color:var(--text-color-l);
+    border-color:var(--border-color-l);
+    --inversion:0;
+}
+
+/* Dark theme */
+.dark{
+    background-color:var(--bg-color-d);
+    color:var(--text-color-d);
+    border-color:var(--border-color-d);
+    --inversion:1;
+    /* --bg-color:black;
+    background-color:var(--bg-color);
+    --text-color:white;
+    --border-color:white;
+    --inversion:1; */
+}
+/* When a mobile user is browsing, we set the menu to be a stack rather than a row of items and change some of the padding so that it uses more of the screen */
+/* @media screen and (max-width: 728px) {
+    *{
+        --cmargin-l-r:2%;
+        --nav-padding:0.5%;
+        --header-size:100%;
+        --navtype:block;
+        --primary-width:92%;
+        --interface-img-width:100%;
+        --nav-width:90%;
+    }
+} */
+
+/* @media screen and (min-width: 729px) {
+    *{
+        --primary-width:80%;
+        --image-width:90%;
+        --nav-width:20%;
+    }
+} */
+
+/* @media screen and (min-width: 1000px) {
+    *{
+        --primary-width:80%;
+        --image-width:80%;
+    }
+} */
+/* 
+@media screen and (min-width: 1700px) {
+    *{
+        --primary-width:60%;
+        --image-width:60%;
+        --nav-width:10%;
+    }
+
+    :root{
+        font-size:150%;
+    }
+} */
+
+/* Style applied to navigation menu at top of screen */
+/* nav{
+    border: 3px var(--bordercolor) solid;
+    border-radius:var(--nav-radius);
+    padding-top: var(--nav-padding);
+    padding-bottom: var(--nav-padding);
+} */
+
+/* Header styles */
+header{
+    padding-top:0%;
+    margin-top:0%;
+    text-align:center;
+    font-family: 'futura';
+    font-weight:bold;
+    font-style:normal;
+    font-size:5vw;
+}
+
+h1{
+    margin-top:1%;
+    margin-bottom:1%;
+}
+
+body{
+    padding-bottom:5%;
+}
+
+.separator{
+    width:70%;
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom-style:solid;
+    /* border-bottom-color:var(--border-color); */
+    border-bottom-width:0.8vw;
+}
+
+.socicon{
+    width:2em;
+    height:2em;
+    display:inline;
+    border-radius:0.2em;
+    filter: invert(var(--inversion));
+}
+
+.socwrapper{
+    font-style:normal;
+    display:inline-block;
+    margin-left:5%;
+    margin-right:5%;
+    margin-top:2%;
+}
+
+.soctext{
+    text-decoration:none;
+    color:inherit;
+    /* color:black; */
+    font-style:bold;
+    margin-top:8%;
+}
+
+.project{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:0.4%;
+    padding-bottom:0.2%;
+    font-style:bold;
+}
+
+.contact{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#about{
+    text-align:center;
+}
+
+#projectlist{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    padding-bottom:2%;
+}
+
+#aboutimg{
+    text-align:center;
+    margin-top:1%;
+}
+
+#headshot{
+    width:20%;
+    height:20%;
+    border-radius:50%;
+    border-style:solid;
+    /* border-color:black; */
+}
+
+#abouttxt{
+    text-align:justify;
+    font-family:sans-serif;
+    text-justify: left;
+    margin-left:auto;
+    margin-right:auto;
+    width:50%;
+}
+
+#aboutsoc{
+    text-align:center;
+    padding-bottom:2%;
+}
+
+.modeswitch{
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+}
