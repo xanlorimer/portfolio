@@ -73,7 +73,7 @@ body{
     text-decoration:none;
     color:inherit;
     /* color:black; */
-    font-style:bold;
+    /* font-style:bold; */
     margin-top:8%;
 }
 
@@ -83,7 +83,7 @@ body{
     margin-right:auto;
     padding-top:0.4%;
     padding-bottom:0.2%;
-    font-style:bold;
+    /* font-style:bold; */
 }
 
 .contact{
@@ -119,7 +119,7 @@ body{
 #abouttxt{
     text-align:justify;
     font-family:sans-serif;
-    text-justify: left;
+    /* text-justify: left; */
     margin-left:auto;
     margin-right:auto;
     width:50%;
