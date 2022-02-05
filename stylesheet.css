@@ -6,21 +6,6 @@
     --bg-color-d:black;
     --text-color-d:white;
     --border-color-d:white;
-    /* font-size:100%; */
-
-    /* Define variables */
-    /* --cmargin-l-r: 10%;
-    --bordercolor: rgb(12, 12, 12);
-    --nav-padding: 1%;
-    --header-size: 40%;
-    --nav-radius: 20px;
-    --primary-width: 80%;
-    --navtype:inline-block;
-    --image-width:100%;
-    --interface-img-width:50%;
-    --selected-item-color:rgba(75, 115, 155, 0.9);
-    --invalid-selection-color:rgba(215, 35, 35, 0.6);
-    --nav-width:15%; */
 }
 
 /* Light theme */
@@ -37,59 +22,7 @@
     color:var(--text-color-d);
     border-color:var(--border-color-d);
     --inversion:1;
-    /* --bg-color:black;
-    background-color:var(--bg-color);
-    --text-color:white;
-    --border-color:white;
-    --inversion:1; */
 }
-/* When a mobile user is browsing, we set the menu to be a stack rather than a row of items and change some of the padding so that it uses more of the screen */
-/* @media screen and (max-width: 728px) {
-    *{
-        --cmargin-l-r:2%;
-        --nav-padding:0.5%;
-        --header-size:100%;
-        --navtype:block;
-        --primary-width:92%;
-        --interface-img-width:100%;
-        --nav-width:90%;
-    }
-} */
-
-/* @media screen and (min-width: 729px) {
-    *{
-        --primary-width:80%;
-        --image-width:90%;
-        --nav-width:20%;
-    }
-} */
-
-/* @media screen and (min-width: 1000px) {
-    *{
-        --primary-width:80%;
-        --image-width:80%;
-    }
-} */
-/* 
-@media screen and (min-width: 1700px) {
-    *{
-        --primary-width:60%;
-        --image-width:60%;
-        --nav-width:10%;
-    }
-
-    :root{
-        font-size:150%;
-    }
-} */
-
-/* Style applied to navigation menu at top of screen */
-/* nav{
-    border: 3px var(--bordercolor) solid;
-    border-radius:var(--nav-radius);
-    padding-top: var(--nav-padding);
-    padding-bottom: var(--nav-padding);
-} */
 
 /* Header styles */
 header{
