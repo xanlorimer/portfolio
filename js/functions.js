@@ -16,7 +16,7 @@ function switchmode(toggle)
 
     debug("Currently stored mode is: " +mode);
 
-    if(mode == "") // If the cookie has not been set,
+    if(mode == undefined) // If the cookie has not been set,
     {
         debug("Cookie init.");
         initCookies();
