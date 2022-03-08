@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadLibs</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/siteicon.png">
+    <script type="text/javascript" src="/js/jquery_slim_min.js"></script>
+    <script type="text/javascript" src="/js/shared.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script></head>
+<body>
+    <main>
+
+        <!-- Site header -->
+        <div id="header">
+            <img class="image" src="./assets/images/madlibs_header.png">    
+        </div>
+        
+        <!-- Stores all input fields -->
+        <div id="inputs">
+            <h3><i>Please fill out the fields below:</i></h3>
+            <div class="field"><label for="pluralnoun">A plural noun... </label><br/><input class="centered" id="pluralnoun" type="text" placeholder="Darts"><br/></div>
+            <div class="field"><label for="nounone">Noun containing liquid... </label><br/><input class="centered" id="nounone" type="text" placeholder="Haggis"><br/></div>
+            <div class="field"><label for="nountwo">Another noun... </label><br/><input class="centered" id="nountwo" type="text" placeholder="Spork"><br/></div>
+            <div class="field"><label for="nounthree">A liquid... </label><br/><input class="centered" id="nounthree" type="text" placeholder="Ichor"><br/></div>
+            <div class="field"><label for="songname">Name of a song... </label><br/><input class="centered" id="songname" type="text" placeholder="Bella Ciao"><br/></div>
+            <div class="field"><label for="verb">A verb... </label><br/><input class="centered" id="verb" type="text" placeholder="Brew"><br/></div>
+            <button class="button" type="button" onclick="javascript:populateMadlib();">Generate MadLib!</button><br/>
+        </div>
+
+        <!-- Our output is unhidden after the user clicks "submit" -->
+        <div id="outputs" class="hidden">
+            <div id="spacer">
+                <p>Making maple syrup is an interesting process.</p>
+                <p>First, you use <span id="pluralnoun_o">darts</span> to bore a small hole in the <span id="nounone_o">haggis</span>.</p>
+                <p>Next, you insert a <span id="nountwo_o">spork</span> into the hole for the <span id="nounthree_o">ichor</span> to flow through.</p>
+                <p>(Be sure to sing a song like "<span id="songname_o">bella ciao</span>" all the while -- it'll make the work go faster)</p>
+                <p>Finally, <span id="verb_o">brew</span> what you've collected to concentrate it, then run it through a filter.</p>
+                <p>Congrats, you're done!</p>
+                <button type="button" id="goagain" class="button" onclick="javascript:goAgain();">Go Again?</button>
+            </div>
+        </div>
+
+        <noscript>
+                <p>You're not running JavaScript. Please enable it.</p>
+        </noscript>
+    </main>
+</body>
+</html>

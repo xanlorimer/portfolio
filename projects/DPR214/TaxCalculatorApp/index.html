@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Calculator App</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/siteicon.png">
+    <script type="text/javascript" src="/js/jquery_slim_min.js"></script>
+    <script type="text/javascript" src="/js/shared.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+<body>
+    <main>
+        <h1>Tax Calculator</h1>
+        <label for="amount">Sales Amount:</label>
+        <input type="text" id="amount"><br/>
+        <p id="amount_err">&nbsp</p>
+        <label for="Tax">Tax Percent</label>
+        <input type="text" id="tax"><br/>
+        <p id="tax_err">&nbsp</p>
+        <label for="total">Total Cost</label>
+        <input type="text" id="total" disabled><br/>
+        <div id="buttons"><input type="button" id="clear" value="Clear Entries"><input type="button" id="calculate" value="Calculate Total"></div><br/>
+    </main>
+    <noscript>
+            <p>You're not running JavaScript. Please enable it.</p>
+    </noscript>
+</body>
+</html>

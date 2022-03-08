@@ -1,0 +1,107 @@
+/* Global style applications */
+:root{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:var(--fontsize);
+}
+
+/* When a mobile user is browsing, we want content to be wider */
+@media screen and (max-width: 728px) {
+    *{
+        --width:90%;
+        --fontsize:16px;
+    }
+}
+
+/* Otherwise, we basically just want content to get wider over time */
+@media screen and (min-width: 728px) {
+    *{
+        --width:50%;
+        --fontsize:1.5vw;
+    }
+}
+
+/* Adds some whitespace to the bottom of the page */
+body{
+    margin-bottom:10%;
+}
+
+/* Sets spacing between lines of output */
+p{
+    margin-top:1%;
+    margin-bottom:1%;
+    max-width:90%;
+}
+
+/* Applies to "Please fill out fields below" header */
+h3{
+    font-style:normal;
+    font-size:var(--fontsize);
+}
+
+/* Applies to content inside of field divs */
+input,label{
+    min-width:60%;
+    font-size:var(--fontsize);
+}
+
+/* Sets spacing between content inside of field divs */
+br{
+    margin-bottom:1.5%;
+}
+
+/* Sets spacing between fields */
+.field{
+    margin-top:2%;
+}
+
+/* Applies to basically anything that's centered */
+.centered,.field,#inputs,#outputs,#header,p{
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+
+/* Applies to header image */
+.image{
+    padding-top:2%;
+    width:var(--width);
+    height:auto;
+}
+
+/* Applies to buttons */
+.button{
+    margin-top:3%;
+    margin-bottom:3%;
+    font-size:var(--fontsize);
+}
+
+/* Separate "hidden" field to avoid using any style attributes in HTML */
+.hidden{
+    display:none;
+}
+
+/* Sets up borders around input and output fields to break up the page a bit */
+#inputs,#outputs{
+    border-color:black;
+    border-width:0.5em;
+    border-style:double;
+    width:var(--width);
+    margin-top:2%;
+    overflow-x:scroll;
+}
+
+/* Sets spacing between input and output, after output appears */
+#outputs{
+    margin-top:3%;
+}
+
+/* Special style for button in output field */
+#goagain{
+    margin-top:1%;
+}
+
+/* Provides spacing internal to outputs */
+#spacer{
+    margin-top:2%;
+    margin-bottom:2%;
+}

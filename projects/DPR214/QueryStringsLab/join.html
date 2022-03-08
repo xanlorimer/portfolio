@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/siteicon.png">
+    <script type="text/javascript" src="/js/shared.js"></script>
+    <script type="text/javascript" src="js/join.js"></script></head>
+<body>
+    <main>
+        <h1>Thanks for joining our email list!</h1>
+        <h1>Please confirm your data:</h1>
+        <div id="namediv">
+            <label for="fname">Name:</label>
+            <p id="fname">&nbsp</p>
+        </div>
+        <div id="emaildiv">
+            <label for="email">Email:</label>
+            <p id="email">&nbsp</p>
+        </div>
+        
+
+        <form id="join_form" name="join_form" action="index.html" method="get">
+            <input class="hidden" id="email_address" name="email_address">
+            <input class="hidden" id="first_name" name="first_name">
+            <div id="buttons">
+                <button type="submit" id="goback">Go Back</button>
+                <button id="confirm" type="button">Confirm Data</button>
+            </div>
+        </form>
+        
+    </main>
+    <noscript>
+            <p>You're not running JavaScript. Please enable it.</p>
+    </noscript>
+</body>
+</html>
