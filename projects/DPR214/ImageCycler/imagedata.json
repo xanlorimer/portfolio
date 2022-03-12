@@ -1,0 +1,52 @@
+{
+"imageData":[
+    {
+        "source":"./assets/images/LabMess1.jpg",
+        "alt":"Picture of messy server lab",
+        "text":"Messy Server Lab",
+        "link":"https://www.icann.org"
+    },
+    {
+        "source":"./assets/images/ServerRacks1.jpg",
+        "alt":"Picture of two server racks",
+        "text":"Two Server Racks",
+        "link":"https://www.iana.org"
+    },
+    {
+        "source":"./assets/images/ServerRack2.jpg",
+        "alt":"Picture of server rack",
+        "text":"A server rack",
+        "link":"https://www.google.com"
+    },
+    {
+        "source":"./assets/images/ServerRacks1.jpg",
+        "alt":"Picture of two server racks",
+        "text":"Two Server Racks",
+        "link":"https://www.example.com"
+    },
+    {
+        "source":"./assets/images/ServerRackOld.jpg",
+        "alt":"Picture of old server rack c2011",
+        "text":"Old server rack",
+        "link":"https://www.hackaday.com"
+    },
+    {
+        "source":"./assets/images/ServerRackOld2.jpg",
+        "alt":"Picture of old server rack c2011",
+        "text":"Old Server Rack",
+        "link":"https://www.duckduckgo.com"
+    },
+    {
+        "source":"./assets/images/ServerRack1.jpg",
+        "alt":"Picture of server rack",
+        "text":"Just one server rack",
+        "link":"https://www.dccc.edu"
+    },
+    {
+        "source":"https://imm120final.xalo.io/assets/livia90s_today.jpg",
+        "alt":"Picture of espresso machine (IMAGE LOADED FROM EXTERNAL SOURCE)",
+        "text":"Pasquini Livia 90S Espresso Machine",
+        "link":"https://xalo.io"
+    }
+]
+}

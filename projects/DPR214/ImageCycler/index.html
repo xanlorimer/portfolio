@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generic Image Cycler</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/siteicon.png">
+    <script type="text/javascript" src="/js/jquery_full_min.js"></script>
+    <script type="text/javascript" src="/js/shared.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script></head>
+<body>
+    <main>
+        <h1>Generic Image Cycler</h1>
+        <p>
+            Below is presented a generic image cycler written in JS and jQuery. The cycler loads image data from <a href="imagedata.json">this local json file</a> and cycles through the images in order. 
+            However, there is also a random mode which shuffles the images and goes through them in a somewhat random order (without repeats). You can set the mode and delay between image changes below.
+            Right now, the utility cycles through several images of my server lab through the years. Each image has a random URL associated with it.
+        </p>
+
+        <div id="inputs">
+            <label for="delay">Delay (s): </label><input type="text" id="delay" value="4">
+            <input type="button" id="setdelay" value="Set Delay">
+            <br/>
+            <div id="delaybox"><p>Current delay: <span id="delayval"></span>s</p></div>
+            <input type="button" id="mode" value="Enable Random Mode">
+        </div>
+        
+        <figure>
+            <a id="cycler_link" href=""><img id="cycler_image"></a>
+            <figcaption id="cycler_text"></figcaption>
+        </figure>
+    </main>
+    <noscript>
+            <p>You're not running JavaScript. Please enable it.</p>
+    </noscript>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Score App</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/siteicon.png">
+    <script type="text/javascript" src="/js/jquery_slim_min.js"></script>
+    <script type="text/javascript" src="/js/shared.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script></head>
+<body>
+    <main>
+        <h1>Test Score App</h1>
+
+        <label for="name">Name:</label>
+        <input type="text" id="name">
+        <br>
+        <label for="score">Score:</label>
+        <input type="text" id="score">
+        <br>
+        <!-- label>&nbsp;</label -->
+        <input type="button" id="add" value="Add to Array">
+        <input type="button" id="display_results" value="Display Results">
+        <input type="button" id="display_scores" value="Display Scores">
+
+        <div id="results" style="display:none">
+            <h2>Results</h2>
+            <p>Average score = <span id="avgScore"></span></p>
+            <p>High score = <span id="highScore"></span></p>
+        </div>
+        <div id="scores" style="display:none">
+            <h2>Scores</h2>
+            <table id="scores_table">
+                <tr>
+                    <th>Name</th>
+                    <th>Score</th>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <noscript>
+            <p>You're not running JavaScript. Please enable it.</p>
+    </noscript>
+</body>
+</html>
