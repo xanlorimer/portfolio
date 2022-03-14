@@ -43,7 +43,7 @@ function numberTrick(val)
     parseURLData();
     debug("DEBUG: A IS: " +a +" AND B IS: " +b);
     let initial = val; // Store the initial value since we'll need it later
-    document.write("<p>This is the number trick. You enter a number, it goes through a series of operations, and no matter what number is chosen, it always ends up at the same final value.</p>");
+    document.write("<p id='info'>This is the number trick. You enter a number, it goes through a series of operations, and no matter what number is chosen, it always ends up at the same final value.</p>");
     document.write("<h1>~ Number Trick ~</h1>");
     document.write("<p>You entered: " +val +"</p>");
     document.write("<p>" +val +" plus " +a +" is " +(val+=a) +"</p>");
