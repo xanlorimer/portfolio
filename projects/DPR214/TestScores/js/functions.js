@@ -3,6 +3,7 @@
 let namesArr = ['Ben', 'Joel', 'Judy', 'Anne'];
 let scoresArr = [88, 98, 77, 88];
 
+// Computes and returns the average of all scores in scoresArr
 function getAvgScore() {
     let i = 0,
         sum = 0,
@@ -13,6 +14,7 @@ function getAvgScore() {
     return sum / len;
 }
 
+// Returns the max score and who got it
 function getHighScore() {
     let i = 0,
         max = 0,
@@ -27,26 +29,28 @@ function getHighScore() {
     return name + ' with score of ' + max;
 }
 
-function initializeResults() {
-    let results = $('#results');
+// Computes highscore and average, then updates the relevant fields with that info (but does not display)
+function getResults() {
     let high = getHighScore();
-    let avg = getAvgScore().toFixed(1);
+    let avg = getAvgScore().toFixed(2);
     $('#highScore').html(high);
     $('#avgScore').html(avg);
 }
 
-
-function displayScores() {
-    // Add your code here
-}
-
+// Computes high score and average, then displays them in the results div
 function displayResults() {
+    getResults(); // Compute highscore
     let results = $('#results');
     results.toggle();
 }
 
+// Updates scores_table with the contents of the arrays
+function displayScores() {
+    // Add your code here
+}
+
 function insertNewTableElement(newName, newScore) {
-   // Add your code here
+   
 }
 
 function initializeScoresTable() {
@@ -60,18 +64,37 @@ function initializeScoresTable() {
 function addScore() {
     let score = $('#score');
     let name = $('#name');
-    if (score.val() === '' || name.val() === '') {
-        alert('Name and score must have values');
+
+    // Our fields are innocent until proven guilty:
+    $('#score').attr("class","");
+    $('#score').attr("class","");
+
+    if (score.val() === '') {
+        $('#score').attr("class","invalid");
         return;
     }
+    else if(name.val() === '')
+    {
+        $("#name").attr("class","invalid");
+    }
+    else if(isNaN(score.parseFloat()))
+    {
+        $('#score').attr("class","invalid");
+    }
+    else if(name == "test") // Replace this with name regex /^[A-Za-z -']/ and !=
+    {
+        $("#name").attr("class","invalid");
+    }
+    
     scoresArr.push(parseInt(score.val()));
     namesArr.push($("#name").val());
     initializeScoresTable();
     score.val('');
     name.val('');
-    initializeResults();
+    getResults();
     $('#scores').show();
     $('#results').show();
+    name.focus();
 }
 
 window.onload = function () {
@@ -91,7 +114,7 @@ window.onload = function () {
     let score = $('#score');
 
     name.focus();
-    initializeResults();
+    getResults();
     initializeScoresTable();
 }
 
