@@ -1,7 +1,7 @@
 'use strict'
 
-let namesArr = ['Ben', 'Joel', 'Judy', 'Anne'];
-let scoresArr = [88, 98, 77, 88];
+let namesArr = ['Claude', 'Joel', 'Judy', 'Giulia'];
+let scoresArr = [92.0, 98.0, 77.0, 90.0];
 
 // Computes and returns the average of all scores in scoresArr
 function getAvgScore() {
@@ -29,7 +29,7 @@ function getHighScore() {
     return name + ' with score of ' + max;
 }
 
-// Computes highscore and average, then updates the relevant fields with that info (but does not display)
+// Computes highscore and average, then silently updates the relevant fields with that info
 function getResults() {
     let high = getHighScore();
     let avg = getAvgScore().toFixed(2);
@@ -90,7 +90,6 @@ function initializeScoresTable() {
     // Remove header row from table
     $('#scores_table tr').slice(1).remove();
     for (let i = 0; i < scoresArr.length; i++) {
-        //insertNewTableElement();
         $('#scores_table tr:last').after('<tr> <td>' + namesArr[i] + '</td><td>' + scoresArr[i] + '</td></tr>');
     }
 }
@@ -115,6 +114,12 @@ function validateFields() {
         score.attr("class","invalid");
         score_err.html("Score must have a value.");
     }
+
+    // Ensure score > 0
+    if(parseFloat(score.val()) < 0 || parseFloat(score.val()) > 100) {
+        score.attr("class","invalid");
+        score_err.html("Score must be between 0 and 100.");
+    }
     
     // Check if name is blank
     if(name.val() == "")
@@ -138,6 +143,7 @@ function validateFields() {
     }
 }
 
+// This function actually adds the score data to the tables and page (assuming everything's valid)
 function addScore() {
     let score = $('#score');
     let name = $('#name');
@@ -167,28 +173,6 @@ function addScore() {
     }
 }
 
-window.onload = function () {
-    $('#display_results').on('click',  function() {
-        displayResults();
-    });
-
-    $('#display_scores').on('click',  function() {
-        displayScores();
-    });
-
-    $('#add').on('click',  function() {
-        addScore();
-    });
-
-    let name = $('#name');
-    debugMode = true;
-
-    name.focus();
-    getResults();
-    initializeScoresTable();
-    validateFields(); // Initial validation
-}
-
 // Handles persistent field validation and enter-based field selection
 $(document).on('keyup', function(e) {
     if (e.key === "Enter") { // If enter is pressed,
@@ -209,3 +193,26 @@ $(document).on('keyup', function(e) {
         validateFields();
     }
 });
+
+// Runs on page load
+window.onload = function () {
+    debugMode = true;
+
+    $('#display_results').on('click',  function() {
+        displayResults();
+    });
+
+    $('#display_scores').on('click',  function() {
+        displayScores();
+    });
+
+    $('#add').on('click',  function() {
+        addScore();
+    });
+
+    let name = $('#name');
+    name.focus();
+    getResults();
+    initializeScoresTable();
+    validateFields(); // Initial validation
+}
