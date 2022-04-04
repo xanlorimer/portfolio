@@ -38,63 +38,133 @@ function getResults() {
 }
 
 // Computes high score and average, then displays them in the results div
-function displayResults() {
+function displayResults(stateOverride) {
     getResults(); // Compute highscore
     let results = $('#results');
-    results.toggle();
+    
+    if(stateOverride) // If state override is true
+    {
+        results.show();
+    }
+    else
+    {
+        results.toggle();
+    }
+        
+    // Change the text of "Display Results" to "Hide Results" and back again, as appropriate
+    if(results.attr("style") == "") // If the "style" attribute for "results" is null, it means that results are currently being shown.
+    {
+        $("#display_results").val("Hide Results");
+    } 
+    else 
+    {
+        $("#display_results").val("Display Results");
+    }
 }
 
 // Updates scores_table with the contents of the arrays
-function displayScores() {
-    // Add your code here
-}
+function displayScores(stateOverride) {
+    let scores = $("#scores");
 
-function insertNewTableElement(newName, newScore) {
-   
+    if(stateOverride) // If state override is true
+    {
+        scores.show();
+    }
+    else
+    {
+        scores.toggle();
+    }
+
+    // Change the text of "Display Scores" to "Hide Scores" and back again, as appropriate
+    if(scores.attr("style") == "") // If the "style" attribute for "scores" is null, it means that scores are currently being shown.
+    {
+        $("#display_scores").val("Hide Scores");
+    } 
+    else 
+    {
+        $("#display_scores").val("Display Scores");
+    }
 }
 
 function initializeScoresTable() {
     // Remove header row from table
     $('#scores_table tr').slice(1).remove();
     for (let i = 0; i < scoresArr.length; i++) {
-        insertNewTableElement($('#scores_table tr:last').after('<tr> <td>' + namesArr[i] + '</td><td>' + scoresArr[i] + '</td></tr>'));
+        //insertNewTableElement();
+        $('#scores_table tr:last').after('<tr> <td>' + namesArr[i] + '</td><td>' + scoresArr[i] + '</td></tr>');
+    }
+}
+
+function validateFields() {
+    let score = $('#score');
+    let name = $('#name');
+
+    let score_err = $("#score_err");
+    let name_err = $("#name_err");
+
+    // Our fields are innocent until proven guilty:
+    score.attr("class","");
+    name.attr("class","");
+    score_err.html("&nbsp;");
+    name_err.html("&nbsp;");
+
+    const nameRegex = /[^A-Za-z \-']/; // Names may NOT contain any characters OTHER THAN: upper/lower case letters, spaces, apostrophes, and dashes
+
+    // Check if score is blank
+    if (score.val() == "") {
+        score.attr("class","invalid");
+        score_err.html("Score must have a value.");
+    }
+    
+    // Check if name is blank
+    if(name.val() == "")
+    {
+        name.attr("class","invalid");
+        name_err.html("Name must have a value.");
+    }
+    
+    // Check if score is parseable as a float
+    if(isNaN(parseFloat(score.val())))
+    {
+        score.attr("class","invalid");
+        score_err.html("Score must be numeric.");
+    }
+    
+    // Check if name is valid
+    if(nameRegex.test(name.val()))
+    {
+        name.attr("class","invalid");
+        name_err.html("Name may only contain A-z, ', -, or space");
     }
 }
 
 function addScore() {
     let score = $('#score');
     let name = $('#name');
+    let score_err = $("#score_err");
+    let name_err = $("#name_err");
 
-    // Our fields are innocent until proven guilty:
-    $('#score').attr("class","");
-    $('#score').attr("class","");
+    // If the field is invalid, do basically nothing:
+    if(name.attr("class") == "invalid" || score.attr("class") == "invalid")
+    {
+        debug("Field is invalid.");
+    }
+    else // Otherwise,
+    {
+        name_err.html("&nbsp"); // Clear the errors
+        score_err.html("&nbsp");
 
-    if (score.val() === '') {
-        $('#score').attr("class","invalid");
-        return;
+        scoresArr.push(parseInt(score.val())); // Add the values to their respective arrays
+        namesArr.push($("#name").val());
+
+        initializeScoresTable(); // Initialize the table
+        score.val('');
+        name.val('');
+        displayScores(true);
+        displayResults(true);
+        name.focus();
+        validateFields();
     }
-    else if(name.val() === '')
-    {
-        $("#name").attr("class","invalid");
-    }
-    else if(isNaN(score.parseFloat()))
-    {
-        $('#score').attr("class","invalid");
-    }
-    else if(name == "test") // Replace this with name regex /^[A-Za-z -']/ and !=
-    {
-        $("#name").attr("class","invalid");
-    }
-    
-    scoresArr.push(parseInt(score.val()));
-    namesArr.push($("#name").val());
-    initializeScoresTable();
-    score.val('');
-    name.val('');
-    getResults();
-    $('#scores').show();
-    $('#results').show();
-    name.focus();
 }
 
 window.onload = function () {
@@ -111,22 +181,31 @@ window.onload = function () {
     });
 
     let name = $('#name');
-    let score = $('#score');
+    debugMode = true;
 
     name.focus();
     getResults();
     initializeScoresTable();
+    validateFields(); // Initial validation
 }
 
-//  Changes focus to next input on enter key
-$(document).on('keypress', function(e) {
-    if (e.key === "Enter") {
-        e.preventDefault();
-        
-        // Get all focusable elements on the page
-        let $canfocus = $(':focusable');
-        let index = $canfocus.index(this) + 1;
-        if (index >= $canfocus.length) index = 0;
-        $canfocus.eq(index).focus();
+// Handles persistent field validation and enter-based field selection
+$(document).on('keyup', function(e) {
+    if (e.key === "Enter") { // If enter is pressed,
+        e.preventDefault(); // Prevent the default action
+        debug("Enter was pressed");
+
+        if($("#name").is(":focus")) // If the #name field is focused,
+        {
+            $("#score").focus(); // Change focus to the #score field.
+        }
+        else if($("#score").is(":focus")) // If the #score field is focused,
+        {
+            addScore(); // Try adding the score to the array (assuming it's valid)
+        }
+    }
+    else // If any other key is pressed, try validating the fields
+    {
+        validateFields();
     }
 });
