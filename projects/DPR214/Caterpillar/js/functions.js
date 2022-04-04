@@ -14,8 +14,11 @@ $(function() {
                 - img src: "assets/images/caterpillar.jpg" --> "assets/images/butterfly.jpg"
                 - #wikiLink src: "https://en.wikipedia.org/wiki/Catepillar" --> "https://en.wikipedia.org/wiki/Monarch_butterfly"
                 - #button value: "metamorphose" --> "restore"
+                - Change color of text
+                - Prepend an informational list to "#buttonsDiv"
+                - Add the class "result" to the informational list (unused, but required)
 
-            And if the user clicks the button when its text is "Restore", the page should be reloaded: location.reload(); 
+            Finally, if the user clicks the button when its text is "Restore", the page should be reloaded: location.reload();
         */
         
         // First, we check if the text of the button has changed. If it has, we want to change the button's behavior to reload instead
@@ -23,12 +26,19 @@ $(function() {
         {
             location.reload();
         }
-
-        $("title").text("Butterfly"); // Change the page title
-        $("h1").html("Butterfly"); // Change the text of the header
-        $("#infoParagraph").html("This is a <strong>Monarch butterfly</strong> in its natural habitat."); // Change info paragraph
-        $("img").attr("src","assets/images/monarch.jpg");
-        $("#wikiLink").attr("href","https://en.wikipedia.org/wiki/Monarch_butterfly");
-        $("#button").val("Restore");
+        else
+        {
+            $("title").text("Butterfly"); // Change the page title
+            $("h1").html("Butterfly"); // Change the text of the header
+            $("#infoParagraph").html("This is a <strong>Monarch butterfly</strong> in its natural habitat."); // Change info paragraph
+            $("img").attr("src","assets/images/monarch.jpg");
+            $("#wikiLink").attr("href","https://en.wikipedia.org/wiki/Monarch_butterfly");
+            $("#wikiLink").html("Information about Monarch butterflies");
+            $("#button").val("Restore");
+    
+            $("#buttonsDiv").prepend("<ul id='infoList' class='colorable' style='text-align:left; margin-left:25%; margin-right:25%;'><li>Butterflies (including the Monarch) are important pollinators.</li><li>Monarch butterflies have co-evolved with the milkweed plant, which is important to their entire life cycle.</li><li>Extensive consumption of milkweed (which contains certain toxins) renders Monarch butterflies unpalatable to predators.</li><li>Monarch populations are in decline, probably due to a combination of factors such as climate change, overuse of herbicides, destruction of milkweed habitat, and deforestation.</li><li>People who study Monarch butterflies are known as 'Monarchists'. <span style='font-size:50%'>(not really)</span></li></ul>");
+            $(".colorable").css("color","rgb(250, 160, 45)"); // Change color on certain items
+            $("#infoList").attr("class","result"); // Set the class of the info list...
+        }
     });
 });
