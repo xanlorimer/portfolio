@@ -4,6 +4,7 @@
 .LSOverride
 requirements
 notes
+cleanup.sh
 
 # Icon must end with two \r
 Icon

@@ -42,13 +42,13 @@ function displayResults(stateOverride) {
     getResults(); // Compute highscore
     let results = $('#results');
     
-    if(stateOverride) // If state override is true
+    if(stateOverride) // If state override is true, we just want to show the results
     {
         results.show();
     }
     else
     {
-        results.toggle();
+        results.toggle(); // Otherwise we perform a toggle
     }
         
     // Change the text of "Display Results" to "Hide Results" and back again, as appropriate
@@ -66,13 +66,13 @@ function displayResults(stateOverride) {
 function displayScores(stateOverride) {
     let scores = $("#scores");
 
-    if(stateOverride) // If state override is true
+    if(stateOverride) // If state override is true, we just want to show the results
     {
         scores.show();
     }
     else
     {
-        scores.toggle();
+        scores.toggle(); // Otherwise we perform a toggle
     }
 
     // Change the text of "Display Scores" to "Hide Scores" and back again, as appropriate
@@ -94,6 +94,7 @@ function initializeScoresTable() {
     }
 }
 
+// Validates the fields and shows error messages depending on what's wrong
 function validateFields() {
     let score = $('#score');
     let name = $('#name');
@@ -107,7 +108,7 @@ function validateFields() {
     score_err.html("&nbsp;");
     name_err.html("&nbsp;");
 
-    const nameRegex = /[^A-Za-z \-']/; // Names may NOT contain any characters OTHER THAN: upper/lower case letters, spaces, apostrophes, and dashes
+    const nameRegex = /[^A-Za-z, \-']/; // Names may NOT contain any characters OTHER THAN: upper/lower case letters, spaces, apostrophes, and dashes
 
     // Check if score is blank
     if (score.val() == "") {
@@ -115,7 +116,7 @@ function validateFields() {
         score_err.html("Score must have a value.");
     }
 
-    // Ensure score > 0
+    // Ensure score [0,100]
     if(parseFloat(score.val()) < 0 || parseFloat(score.val()) > 100) {
         score.attr("class","invalid");
         score_err.html("Score must be between 0 and 100.");

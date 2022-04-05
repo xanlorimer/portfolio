@@ -2,7 +2,7 @@
 Test scores app...
 
 ### About
-A simple app for keeping track of test scores. Don't actually use this; data will not persist across reloads. 
+A simple app for keeping track of test scores, just for show. Don't actually use this for anything important; data will not persist across page reloads. 
 
 ### To do
 - [x] displayResults() calculates avg score and highest score from arrays and displays 
