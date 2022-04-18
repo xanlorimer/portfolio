@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="robots" content="noindex">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Mash</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="icon" type="image/svg+xml" href="https://xalo.io/assets/images/siteicon.png">
+    <script type="text/javascript" src="https://xalo.io/js/jquery_full_min.js"></script>
+    <script type="text/javascript" src="https://xalo.io/js/shared.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+    <div id="headerdiv">
+        <p id="header">Monster Mashup</p>
+        <p id="infotext">Create a monster by clicking on the four sections of the image below. Left click scrolls left, right click scrolls right.</p>
+    </div>
+    <div id="container">
+        <audio id="thunder" src="assets/audio/mixkit-cinematic-thunder-1283-short.wav" type="audio/wav"></audio>
+        <img class="lightning" id="lightning1" src="assets/images/lightning-01.jpg" />
+        <img class="lightning" id="lightning2" src="assets/images/lightning-02.jpg" />
+        <img class="lightning" id="lightning3" src="assets/images/lightning-03.jpg" />
+        <div id="frame">
+            <div id="pic_box">
+                <div id="head" class="face"><img src="assets/images/headstrip.png" draggable="false"/></div>
+                <div id="eyes" class="face"><img src="assets/images/eyestrip.png" draggable="false"/></div>
+                <div id="nose" class="face"><img src="assets/images/nosestrip.png" draggable="false"/></div>
+                <div id="mouth" class="face"><img src="assets/images/mouthstrip.png" draggable="false"/></div>
+            </div>
+        </div>
+        <button id="mute">Unmute Audio</button>
+    </div>
+</body>
+
+</html>
