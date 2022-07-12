@@ -61,15 +61,6 @@ body{
     filter: invert(var(--inversion));
 }
 
-.socicon_disabled{
-    width:2em;
-    height:2em;
-    display:inline;
-    border-radius:0.2em;
-    filter: invert(var(--inversion));
-    opacity: 0.5;
-}
-
 .socwrapper{
     font-style:normal;
     display:inline-block;
