@@ -50,7 +50,7 @@ body{
     margin-right: auto;
     border-bottom-style:solid;
     /* border-bottom-color:var(--border-color); */
-    border-bottom-width:0.8vw;
+    border-bottom-width:0.5vw;
 }
 
 .socicon{
@@ -59,6 +59,15 @@ body{
     display:inline;
     border-radius:0.2em;
     filter: invert(var(--inversion));
+}
+
+.socicon_disabled{
+    width:2em;
+    height:2em;
+    display:inline;
+    border-radius:0.2em;
+    filter: invert(var(--inversion));
+    opacity: 0.5;
 }
 
 .socwrapper{
